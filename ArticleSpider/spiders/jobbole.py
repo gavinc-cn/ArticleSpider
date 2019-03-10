@@ -23,7 +23,6 @@ class JobboleSpider(scrapy.Spider):
         post_nodes = response.css("#archive .floated-thumb .post-thumb a")
         for post_node in post_nodes:
             image_url = post_node.css("img::attr(src)").extract_first("")
-            print(11111111111111111)
             post_url = post_node.css("::attr(href)").extract_first("")
             yield Request(url=parse.urljoin(response.url, post_url), meta={'front_image_url': image_url}, callback=self.parse_detail)
 

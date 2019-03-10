@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 scrapy = "*"
 pillow = "*"
+mysqlclient = {index = "http://www.douban.com/simple",version = "*"}
 
 [requires]
 python_version = "3.6"
